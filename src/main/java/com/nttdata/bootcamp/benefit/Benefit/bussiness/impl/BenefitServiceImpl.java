@@ -73,4 +73,13 @@ public class BenefitServiceImpl implements com.nttdata.bootcamp.benefit.Benefit.
                 });
     }
 
+    @Override
+    public Flux<Benefit> findByCustomerId(String benefitId) {
+      return benefitRepository.findByCustomerId(benefitId);
+    }
+
+  @Override
+  public Flux<Benefit> findByProductId(String productId) {
+    return benefitRepository.findByProductId(productId);
+  }
 }

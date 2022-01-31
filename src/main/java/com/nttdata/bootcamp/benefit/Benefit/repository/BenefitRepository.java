@@ -9,4 +9,6 @@ import reactor.core.publisher.Flux;
 public interface BenefitRepository extends ReactiveMongoRepository<Benefit, String> {
     Flux<Benefit> findAllByActiveIsTrue();
     Flux<Benefit> findByCustomerIdAndProductId(String customerId, String productId);
+    Flux<Benefit> findByCustomerId(String customerId);
+    Flux<Benefit> findByProductId(String productId);
 }

@@ -61,4 +61,31 @@ public class BenefitController {
                 .flatMap(benefit -> Mono.just(ResponseEntity.ok(benefit)))
                 .switchIfEmpty(Mono.just(ResponseEntity.notFound().build()));
     }
+
+    //Benefit -> Customer
+    @GetMapping("/customer/{id}")
+    public Mono<ResponseEntity<Flux<Benefit>>> findByCustomerId(@PathVariable("id") String id) {
+      log.info("Benefit -> Customer>>>>>");
+      System.out.println(id);
+      return Mono.just(ResponseEntity.ok()
+              .contentType(MediaType.APPLICATION_JSON)
+              .body(benefitService.findByCustomerId(id)));
+    }
+
+  //Benefit -> Product
+  /*@GetMapping("/product/{id}")
+  public Mono<ResponseEntity<Flux<Benefit>>> findByProductId(@PathVariable("id") String id) {
+    log.info("Benefit -> Product>>>>>");
+    System.out.println(id);
+    return Mono.just(ResponseEntity.ok()
+            .contentType(MediaType.APPLICATION_JSON)
+            .body(benefitService.findByProductId(id)));
+  }*/
+  //Benefit -> Product
+  @GetMapping("/product/{id}")
+  public Flux<Benefit> findByProductId(@PathVariable("id") String id) {
+    log.info("Benefit -> Product>>>>>");
+    System.out.println(id);
+    return benefitService.findByProductId(id);
+  }
 }

@@ -13,4 +13,7 @@ public interface BenefitService {
     Mono<Benefit> findById(String benefitId);
     Mono<Benefit> update(Benefit benefit);
     Mono<Benefit> remove(String benefitId);
+    Flux<Benefit> findByCustomerId(String customerId);
+    Flux<Benefit> findByProductId(String productId);
+
 }

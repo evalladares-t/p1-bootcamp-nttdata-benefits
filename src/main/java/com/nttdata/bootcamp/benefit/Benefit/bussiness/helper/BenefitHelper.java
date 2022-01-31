@@ -17,15 +17,22 @@ public class BenefitHelper {
   public Mono<Benefit> createObjectBenefit(CustomerDto customerDto, ProductDto productDto, Benefit benefit, List<Benefit> benefitList) {
     benefit.setCreatedAt(LocalDate.now());
     benefit.setActive(true);
+    benefit.setDateAction(productDto.getDateAction());
+    benefit.setMaxMovements(productDto.getMaxMovements());
+    benefit.setCommissionTransaction(productDto.getCommission());
+    benefit.setProductType(productDto.getProductType());
     benefit.setRestMovements(productDto.getMaxMovements());
     Integer maxCount = productDto.getMaxCountPersonal();
     if(customerDto.getCustomerType().equals(constantCustomer.BUSINESS.name())){
       maxCount = productDto.getMaxCountBusiness();
     }
-    System.out.println(maxCount);
+
     if(maxCount==null || maxCount>benefitList.size()){
       if(productDto.getProductType().equals(constantProduct.PASSIVES.name())){
         benefit.setTotalAmount((float) 0);
+        if(benefit.getMinOpeningAmount()!=null){
+          benefit.setTotalAmount(benefit.getMinOpeningAmount());
+        }
         benefit.setTotalCommission((float) 0);
       }
       if(productDto.getProductType().equals(constantProduct.ASSETS.name())){

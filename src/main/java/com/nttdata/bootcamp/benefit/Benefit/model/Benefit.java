@@ -26,20 +26,34 @@ public class Benefit {
     private String customerId;
     @Field(name = "product_id")
     private String productId;
+    @Field(name = "product_type")
+    private String productType;
+    @Field(name = "max_movements")
+    private Integer maxMovements;
     @Field(name = "rest_movements")
     private Integer restMovements;
     @Field(name = "total_amount")
     private Float totalAmount;
+    @Field(name = "commission_amount")
+    private Float commissionAmount;
+    @Field(name = "commission_transaction")
+    private Float commissionTransaction;
     @Field(name = "total_comission")
     private Float totalCommission;
     @Field(name = "total_credit")
     private Float totalCredit;
     @Field(name = "rest_credit")
     private Float restCredit;
-    @Field(name = "created_at")
-    private LocalDate createdAt;
-    @Field(name = "created_by")
-    private String createdBy;
+    @Field(name = "date_action")
+    private Integer dateAction;
     @Field(name = "is_active")
     private Boolean active;
+    @Field(name = "min_opening_amount")
+    private Float minOpeningAmount;
+    @Field(name = "created_at")
+    private LocalDate createdAt;
+    @Field(name = "expired_date")
+    private LocalDate expiredDate;
+    @Field(name = "created_by")
+    private String createdBy;
 }
