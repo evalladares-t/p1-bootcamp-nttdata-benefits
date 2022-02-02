@@ -15,6 +15,10 @@ public class CustomerDto {
 
   private String customerType;
   private Boolean owner;
+  private String documentNumber;
+  private String email;
+  private String phone;
+  private String imeiPhone;
   private Boolean active;
 
 }

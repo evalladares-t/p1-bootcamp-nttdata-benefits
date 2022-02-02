@@ -28,12 +28,21 @@ public class Benefit {
     private String productId;
     @Field(name = "product_type")
     private String productType;
+    @Field(name = "account_type")
+    private String account_type;
+    @Field(name = "account_number")
+    private String accountNumber;
+    @Field(name = "total_amount")
+    private Float totalAmount;
+    @Field(name = "total_boot_coin")
+    private Float totalBootCoin;
+    //client is Bank
+    @Field(name = "sub_account_number")
+    private String subAccountNumber;
     @Field(name = "max_movements")
     private Integer maxMovements;
     @Field(name = "rest_movements")
     private Integer restMovements;
-    @Field(name = "total_amount")
-    private Float totalAmount;
     @Field(name = "commission_amount")
     private Float commissionAmount;
     @Field(name = "commission_transaction")
@@ -46,10 +55,11 @@ public class Benefit {
     private Float restCredit;
     @Field(name = "date_action")
     private Integer dateAction;
-    @Field(name = "is_active")
-    private Boolean active;
     @Field(name = "min_opening_amount")
     private Float minOpeningAmount;
+    //pass
+    @Field(name = "is_active")
+    private Boolean active;
     @Field(name = "created_at")
     private LocalDate createdAt;
     @Field(name = "expired_date")

@@ -73,19 +73,12 @@ public class BenefitController {
     }
 
   //Benefit -> Product
-  /*@GetMapping("/product/{id}")
+  @GetMapping("/product/{id}")
   public Mono<ResponseEntity<Flux<Benefit>>> findByProductId(@PathVariable("id") String id) {
     log.info("Benefit -> Product>>>>>");
     System.out.println(id);
     return Mono.just(ResponseEntity.ok()
             .contentType(MediaType.APPLICATION_JSON)
             .body(benefitService.findByProductId(id)));
-  }*/
-  //Benefit -> Product
-  @GetMapping("/product/{id}")
-  public Flux<Benefit> findByProductId(@PathVariable("id") String id) {
-    log.info("Benefit -> Product>>>>>");
-    System.out.println(id);
-    return benefitService.findByProductId(id);
   }
 }

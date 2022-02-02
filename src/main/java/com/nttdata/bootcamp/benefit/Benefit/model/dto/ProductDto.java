@@ -14,11 +14,15 @@ import lombok.extern.slf4j.Slf4j;
 public class ProductDto {
 
   private String productType;
+  private String account_type;
   private Integer maxCountPersonal;
   private Integer maxCountBusiness;
   private Float commission;
   private Integer maxMovements;
   private Integer dateAction;
   private Boolean active;
+  private Boolean clientBank;
+  private Float amountPurchase;
+  private Float amountSale;
 
 }
